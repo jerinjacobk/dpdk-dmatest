@@ -149,6 +149,7 @@ test_sources = files(
         'test_trace_register.c',
         'test_trace_perf.c',
         'test_version.c',
+        'test_dma_perf.c',
         'virtual_pmd.c',
 )
 
@@ -411,6 +412,10 @@ endif
 
 # Strict-aliasing rules are violated by uint8_t[] to context size casts.
 cflags += '-fno-strict-aliasing'
+cflags += '-Wno-unused-variable'
+cflags += '-Wno-unused-parameter'
+cflags += '-Wno-missing-prototypes'
+cflags += '-Wno-missing-declarations'
 
 # Enable using internal APIs in unit tests
 cflags += ['-DALLOW_INTERNAL_API']
